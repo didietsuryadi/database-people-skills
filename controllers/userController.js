@@ -18,7 +18,7 @@ module.exports = {
         })
       }
     })
-  }
+  },
   deleteUser: function(req,res){
     User.findOneAndRemove({username:req.params.username}, function(err, data){
       if (err){
@@ -49,7 +49,7 @@ module.exports = {
   getSkills: function(req,res){
     User.findOne({username: req.params.username})
     .then(function(data){
-      res.json(data[0].skills)
+      res.json(data.skills)
     })
   },
   addSkill: function(req,res){
